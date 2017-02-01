@@ -1,0 +1,36 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: barclays-windows
+  region: eu-west-2
+  availability_zone: a
+  image_id: ami-9c363cf8
+  subnet_id: subnet-b2d331c9
+  instance_type: t2.medium
+  security_group_ids: sg-7a509e13
+  retryable_tries: 120
+  associate_public_ip: true
+  tags: 
+    Name: rhel-kitchen
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+transport:
+  ssh_key: /Users/warren/.ssh/barclays-windows.pem
+
+platforms:
+  - name: RHEL-7.3
+    image_id: ami-9c363cf8
+
+suites:
+  - name: default
+    run_list:
+      - recipe[role_simple_apache::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:

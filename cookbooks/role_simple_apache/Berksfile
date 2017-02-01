@@ -1,0 +1,6 @@
+source 'https://supermarket.chef.io'
+
+cookbook 'lib_simple_apache', path: '../lib_simple_apache'
+cookbook 'wrap_simple_apache', path: '../wrap_simple_apache'
+cookbook 'app_simple_apache', path: '../app_simple_apache'
+metadata
