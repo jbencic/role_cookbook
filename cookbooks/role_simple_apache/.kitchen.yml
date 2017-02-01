@@ -28,8 +28,9 @@ platforms:
 
 suites:
   - name: default
+    roles_path: "../../roles"
     run_list:
-      - recipe[role_simple_apache::default]
+      - role[simple_apache]
     verifier:
       inspec_tests:
         - test/smoke/default
