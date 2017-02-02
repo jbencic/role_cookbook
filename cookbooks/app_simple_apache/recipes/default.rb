@@ -8,6 +8,6 @@ cookbook_file '/var/www/html/test_site/public_html/app.html' do
   source 'app.html'
   owner 'apache'
   group 'apache'
-  mode '0755'
+  mode '0644'
   action :create
 end

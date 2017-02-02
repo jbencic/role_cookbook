@@ -16,6 +16,13 @@ directory "#{document_root}/public_html" do
   group 'apache'
 end
 
+directory "#{document_root}" do
+  mode '0755'
+  recursive true
+  owner 'apache'
+  group 'apache'
+end
+
 template '/etc/httpd/conf.d/vhost.conf' do
   source 'virtualhosts.erb'
   mode '0644'
