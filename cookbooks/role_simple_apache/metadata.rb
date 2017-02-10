@@ -18,6 +18,5 @@ version '0.1.0'
 #
 # source_url 'https://github.com/<insert_org_here>/role_simple_apache' if respond_to?(:source_url)
 
-depends 'lib_simple_apache'
 depends 'wrap_simple_apache'
 depends 'app_simple_apache'
